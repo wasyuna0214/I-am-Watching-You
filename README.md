@@ -35,4 +35,10 @@
 ## <a id="install"></a>安裝教學
 ## <a id="use"></a>使用教學
 ## <a id="work"></a>工作分配
+ 組員   | 工作分配        |
+| ------ | --------------- |
+| 蕭仲廷 | 發想、整合、找資料、編寫、Debug |
+| 朱珮瑜 | 找資料、編寫、Debug、Demo |
+| 張宥錚 | 找資料、Debug、共筆整理、PPT、口頭報告、GitHub |
+| 楊叡 | 找資料、編寫、Debug、共筆整理、PPT、GitHub |
 ## <a id="reference"></a>參考文獻
