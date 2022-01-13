@@ -25,7 +25,7 @@
 ## <a id="device"></a>硬體、軟體設備、使用服務
 | 名稱 | 圖片 | 用途 |
 | ---- | ---- |---|
-|虛擬機（Ubuntu 系統）x2|<img src="https://i.imgur.com/cU5FEmA.png" width="150px"/>|入侵的主機、被入侵的主機|
+|虛擬機（Ubuntu 系統）x2|<img src="https://i.imgur.com/cU5FEmA.png" width="150px"/>|作為"入侵的主機"以及"被入侵的主機"|
 |Docker|<img src="https://i.imgur.com/rPBTqdW.png" width="150px"/>|偵測入侵後被導向的環境|
 |SSH|<img src="https://i.imgur.com/1b8GtuI.png" width="150px"/>|建立遠端連線的服務|
 |Fail2ban|<img src="https://i.imgur.com/PELqrvA.png" width="150px"/>|偵測到密碼錯誤多次，對入侵 ip 進行操作|
