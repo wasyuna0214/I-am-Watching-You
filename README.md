@@ -20,6 +20,9 @@
 ### <a>功能介紹</a>
 模擬當有駭客想要透過SSH連線來連入被攻擊者的裝置進行操作時的情況，在嘗試多次輸入密碼未成功，以致於讓"被攻擊者"偵測到入侵後，"被攻擊者"會將駭客導向事先架設在自己本機的Docker中，並記錄下駭客在Docker中所執行的操作，再透過log檔的形式將蒐集到的資料傳送回"被攻擊者"主機，以達到實時監控的效果
 
+- 示意圖
+<img src="https://user-images.githubusercontent.com/55233942/149553359-c802bf41-3755-4792-9618-e6e944796709.png"/>
+
 
 
 ## <a id="device"></a>硬體、軟體設備、使用服務
@@ -33,6 +36,37 @@
 |iptables|<img src=https://i.imgur.com/8sp0L5A.png width="150px"/>|允許 TCP/UDP到本機的 514 port|
 ## <a id="LSA_class"></a>LSA課堂知識運用
 ## <a id="install"></a>安裝教學
+依照角色可以分為"被攻擊者"和"Docker"：
+
+### 被攻擊者
+
+#### 建置Docker：
+- `sudo apt update`
+- `sudo apt upgrade`
+- `sudo apt install docker.io`：安裝docker
+- `sudo docker pull ubuntu`：
+- `sudo docker run -itd --name fakessh -p 5000:22 ubuntu`：
+- `sudo docker exec -it fakessh /bin/bash`：
+#### 建置fail2ban環境：
+- `sudo apt install fail2ban`：安裝fail2ban服務
+- `sudo vim /etc/fail2ban/jail.conf`：
+  - `maxretry=2`
+  - 在 sshd 下方加入：
+    - `enabled = true`
+    - `filter = sshd`
+    - `action = iptables[name=SSH, port=ssh, protocol=tcp]`
+    - `logpath = /var/log/imwatchingu-VirtualBox/sshd.log`
+   - 存檔
+- `sudo vim /etc/fail2ban/action.d/iptables.conf`
+![](https://i.imgur.com/DsGS6z4.png)
+- `sudo vim /etc/fail2ban/action.d/iptables-common.conf`
+    - `actionflush = <iptables> -t nat -F f2b-<name>`
+- `ssh imwatchingu@127.0.0.1` 先連線一次讓他產生 ssh 的 log
+- 重啟 fail2ban
+    - `service fail2ban restart`
+    - `fail2ban-client status`
+- 監看 ssh 有沒有抓到：`tail -f /var/log/imwatchingu-VirtualBox/sshd.log`
+- 監看 fail2ban 有沒有反映：`tail -f /var/log/fail2ban.log`
 ## <a id="use"></a>使用教學
 ## <a id="work"></a>工作分配
 | 組員 | 工作內容 |
