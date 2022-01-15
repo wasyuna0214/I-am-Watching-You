@@ -68,6 +68,23 @@
 - 監看 ssh 有沒有抓到：`tail -f /var/log/imwatchingu-VirtualBox/sshd.log`
 - 監看 fail2ban 有沒有反映：`tail -f /var/log/fail2ban.log`
 
+#### 建置rsyslog
+- `sudo apt update`
+- `sudo apt upgrade`
+- `sudo apt install docker.io`：裝docker
+- `sudo apt install openssh-server`
+- `sudo apt install fail2ban`
+- `sudo docker pull ubuntu`
+- `sudo docker run -itd --name fakessh -p 5000:22 ubuntu`
+- `sudo docker exec -it fakessh /bin/bash`
+- `sudo vim /etc/rsyslog.conf`
+    - 把TCP、UDP下面兩行取消註解
+    - 打在global上面：`$template RemoteLogs,"/var/log/%HOSTNAME%/%PROGRAMNAME%.log" *.* ?RemoteLogs & ~`
+- `service rsyslog restart`
+- `sudo ss -tulnp | grep "rsyslog"`
+- `iptables -A INPUT -p tcp --dport 514 -j ACCEPT`
+- `iptables -A INPUT -p udp --dport 514 -j ACCEPT`
+
 ### Docker
 - `passwd`：新增密碼
 - `adduser imwatchingu`：新增使用者
