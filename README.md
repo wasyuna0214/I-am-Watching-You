@@ -77,7 +77,7 @@
 | 楊叡 | 找資料、編寫、Debug、共筆整理、PPT、GitHub |
 ## <a id="reference"></a>參考文獻
 ### fail2ban
-#### 環境
+#### 環境建置
 - [fail2ban 教學](https://xenby.com/b/107-%E6%95%99%E5%AD%B8-%E4%BD%BF%E7%94%A8fail2ban%E9%98%B2%E6%AD%A2%E6%9A%B4%E5%8A%9B%E7%99%BB%E5%85%A5%E6%94%BB%E6%93%8A)
 - [SSH 5 分鐘內登入失敗 3 次](https://iter01.com/563209.html)
 - [fail2ban-基本設定及安裝筆記](https://crowsnest1217.com/%E5%AD%B8%E7%BF%92%E8%88%87%E5%88%86%E4%BA%AB/fail2ban-setting.html)
@@ -91,4 +91,13 @@
 - [Docker Syslog 日誌記錄和故障排除](https://www.loggly.com/use-cases/docker-syslog-logging-and-troubleshooting/)
 - [使用 Syslog 集中您的 Docker 日誌記錄](https://betterprogramming.pub/docker-centralized-logging-with-syslog-97b9c147bd30)
 ### Docker
+#### 環境建置
+- [Ubuntu Linux 安裝 Docker 步驟與使用教學](https://blog.gtwang.org/virtualization/ubuntu-linux-install-docker-tutorial/)
+- [Day 5 關於 Container 的那些大小事](https://ithelp.ithome.com.tw/articles/10193534)
+- [Docker Container 基礎入門篇 1 猴子也會的 Docker，但猴子並不想會。](https://azole.medium.com/docker-container-%E5%9F%BA%E7%A4%8E%E5%85%A5%E9%96%80%E7%AF%87-1-3cb8876f2b14)
+ #### 操作
+- [進入docker跟映射ssh docker內設定](https://blog.csdn.net/qq_43914736/article/details/90608587)
+- [想用 SSH 連線到 Docker container](https://bingdoal.github.io/deploy/2021/02/use-ssh-connect-on-docker-container/)
+- [How to Fix SSH Failed Permission Denied](https://phoenixnap.com/kb/ssh-permission-denied-publickey)
+- [docker指令大全](https://joshhu.gitbooks.io/dockercommands/content/Containers/DockerRun.html)
 
