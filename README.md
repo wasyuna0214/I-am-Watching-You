@@ -94,7 +94,7 @@
 #### 環境建置
 - [Ubuntu Linux 安裝 Docker 步驟與使用教學](https://blog.gtwang.org/virtualization/ubuntu-linux-install-docker-tutorial/)
 - [Day 5 關於 Container 的那些大小事](https://ithelp.ithome.com.tw/articles/10193534)
-- [Docker Container 基礎入門篇 1 猴子也會的 Docker，但猴子並不想會。](https://azole.medium.com/docker-container-%E5%9F%BA%E7%A4%8E%E5%85%A5%E9%96%80%E7%AF%87-1-3cb8876f2b14)
+- [Docker Container 基礎入門篇 1](https://azole.medium.com/docker-container-%E5%9F%BA%E7%A4%8E%E5%85%A5%E9%96%80%E7%AF%87-1-3cb8876f2b14)
  #### 操作
 - [進入docker跟映射ssh docker內設定](https://blog.csdn.net/qq_43914736/article/details/90608587)
 - [想用 SSH 連線到 Docker container](https://bingdoal.github.io/deploy/2021/02/use-ssh-connect-on-docker-container/)
