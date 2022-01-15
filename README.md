@@ -89,6 +89,7 @@
 
 
 ## <a id="use"></a>使用教學
+- [實際操作影片](https://www.youtube.com/watch?v=1YplvXJDJvc&ab_channel=ChungTingXiao)
 ## <a id="work"></a>工作分配
 | 組員 | 工作內容 |
 | ------ | --------------- |
