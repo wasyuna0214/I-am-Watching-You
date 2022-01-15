@@ -67,6 +67,27 @@
     - `fail2ban-client status`
 - 監看 ssh 有沒有抓到：`tail -f /var/log/imwatchingu-VirtualBox/sshd.log`
 - 監看 fail2ban 有沒有反映：`tail -f /var/log/fail2ban.log`
+
+### Docker
+- `passwd`：新增密碼
+- `adduser imwatchingu`：新增使用者
+- `apt update`
+- `apt upgrade`
+- `apt install vim`
+- `apt install rsyslog`：安裝rsyslog服務
+- `apt install openssh-server`
+- `apt install sudo`
+- `vim /etc/sudoers`
+    - `imwatchingu ALL=(ALL:ALL) ALL`：給予權限
+- `su imwatchingu`
+- `sudo vim /etc/rsyslog.conf`
+    - 最後一行加：`*.* @@172.17.0.1:514`：允許Docker用tcp將蒐集到的資料傳回被攻擊者的514port
+- `service rsyslog start`
+- `service rsyslog status`
+- `/etc/sshd_config`
+    - `PermitRootLogin yes`：允許Root使用ssh登入
+
+
 ## <a id="use"></a>使用教學
 ## <a id="work"></a>工作分配
 | 組員 | 工作內容 |
