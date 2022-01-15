@@ -76,3 +76,19 @@
 | 張宥錚 | 找資料、Debug、共筆整理、PPT、口頭報告、GitHub |
 | 楊叡 | 找資料、編寫、Debug、共筆整理、PPT、GitHub |
 ## <a id="reference"></a>參考文獻
+### fail2ban
+#### 環境
+- [fail2ban 教學](https://xenby.com/b/107-%E6%95%99%E5%AD%B8-%E4%BD%BF%E7%94%A8fail2ban%E9%98%B2%E6%AD%A2%E6%9A%B4%E5%8A%9B%E7%99%BB%E5%85%A5%E6%94%BB%E6%93%8A)
+- [SSH 5 分鐘內登入失敗 3 次](https://iter01.com/563209.html)
+- [fail2ban-基本設定及安裝筆記](https://crowsnest1217.com/%E5%AD%B8%E7%BF%92%E8%88%87%E5%88%86%E4%BA%AB/fail2ban-setting.html)
+#### 操作
+- [action](https://blog.xuite.net/bearsir/blog/61701441)
+- [手動解除 fail2ban 封鎖的 IP](https://www.ichiayi.com/tech/fail2ban_unban)
+### rsyslog
+- [How to Configure Remote Logging with Rsyslog on Ubuntu 18.04](https://kifarunix.com/how-to-configure-remote-logging-with-rsyslog-on-ubuntu-18-04/)
+- [How to Send Linux Logs to a Remote Server](https://linuxhint.com/send_linux_logs_remote_server/)
+- [詳細解說的很棒的網址](https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/)
+- [Docker Syslog 日誌記錄和故障排除](https://www.loggly.com/use-cases/docker-syslog-logging-and-troubleshooting/)
+- [使用 Syslog 集中您的 Docker 日誌記錄](https://betterprogramming.pub/docker-centralized-logging-with-syslog-97b9c147bd30)
+### Docker
+
