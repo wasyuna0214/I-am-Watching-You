@@ -69,17 +69,14 @@
 - 監看 fail2ban 有沒有反映：`tail -f /var/log/fail2ban.log`
 
 #### 建置rsyslog
-- `sudo apt update`
-- `sudo apt upgrade`
-- `sudo apt install docker.io`：裝docker
-- `sudo apt install openssh-server`
-- `sudo apt install fail2ban`
-- `sudo docker pull ubuntu`
-- `sudo docker run -itd --name fakessh -p 5000:22 ubuntu`
-- `sudo docker exec -it fakessh /bin/bash`
+- `sudo apt install rsyslog`
+- `service rsyslog start`
+- `service rsyslog status`
 - `sudo vim /etc/rsyslog.conf`
     - 把TCP、UDP下面兩行取消註解
-    - 打在global上面：`$template RemoteLogs,"/var/log/%HOSTNAME%/%PROGRAMNAME%.log" *.* ?RemoteLogs & ~`
+    - 
+    - 打在global上面：`$template RemoteLogs,"/var/log/%HOSTNAME%/%PROGRAMNAME%.log" *.* ?RemoteLogs & ~`：用來產生存放log檔的資料夾
+    - 
 - `service rsyslog restart`
 - `sudo ss -tulnp | grep "rsyslog"`
 - `iptables -A INPUT -p tcp --dport 514 -j ACCEPT`
@@ -99,10 +96,13 @@
 - `su imwatchingu`
 - `sudo vim /etc/rsyslog.conf`
     - 最後一行加：`*.* @@172.17.0.1:514`：允許Docker用tcp將蒐集到的資料傳回被攻擊者的514port
+      ![image](https://user-images.githubusercontent.com/55233942/149630824-b10cc7fe-0d60-420a-9834-958e82b33022.png)
 - `service rsyslog start`
 - `service rsyslog status`
-- `/etc/sshd_config`
+- `sudo vim /etc/ssh/sshd_config`
     - `PermitRootLogin yes`：允許Root使用ssh登入
+    ![image](https://user-images.githubusercontent.com/55233942/149631027-f1d9f25b-9ede-4d65-95f3-c95b1de6af5f.png)
+
 
 
 ## <a id="use"></a>使用教學
