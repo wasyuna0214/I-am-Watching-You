@@ -73,9 +73,9 @@
 - `service rsyslog start`
 - `service rsyslog status`
 - `sudo vim /etc/rsyslog.conf`
-    - 把TCP、UDP下面兩行取消註解
+    - 把TCP、UDP下面兩行取消註解<br>
     ![image](https://user-images.githubusercontent.com/55233942/149632669-39c2dc6c-beb4-4ea4-a6f6-bdbb7055d3f0.png)
-    - 打在global上面：`$template RemoteLogs,"/var/log/%HOSTNAME%/%PROGRAMNAME%.log" *.* ?RemoteLogs & ~`，用來產生存放log檔的資料夾
+    - 打在global上面：`$template RemoteLogs,"/var/log/%HOSTNAME%/%PROGRAMNAME%.log" *.* ?RemoteLogs & ~`<br>，用來產生存放log檔的資料夾
     ![image](https://user-images.githubusercontent.com/55233942/149632781-1109ffdc-49fd-48cd-ab74-7e6647e7ea05.png)
 - `service rsyslog restart`
 - 新增防火牆規則
@@ -97,7 +97,7 @@
 - `su imwatchingu`
 - `sudo vim /etc/rsyslog.conf`
     - 最後一行加：`*.* @@172.17.0.1:514`：允許Docker用tcp將蒐集到的資料傳回被攻擊者的514port
-      ![image](https://user-images.githubusercontent.com/55233942/149630824-b10cc7fe-0d60-420a-9834-958e82b33022.png)
+        ![image](https://user-images.githubusercontent.com/55233942/149630824-b10cc7fe-0d60-420a-9834-958e82b33022.png)
 - `service rsyslog start`
 - `service rsyslog status`
 - `sudo vim /etc/ssh/sshd_config`
