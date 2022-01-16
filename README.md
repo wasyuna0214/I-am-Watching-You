@@ -56,7 +56,7 @@
 
 #### 建置fail2ban環境：
 - `sudo apt install fail2ban`：安裝fail2ban服務
-- `sudo vim /etc/fail2ban/jail.conf`：
+- `sudo vim /etc/fail2ban/jail.conf`
   - `maxretry=2`
   - 在 sshd 下方加入：
     - `enabled = true`
