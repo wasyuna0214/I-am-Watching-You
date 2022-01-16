@@ -6,6 +6,7 @@
 - [使用教學](#use)
 - [工作分配](#work)
 - [參考文獻](#reference)
+
 ## <a id="Concept_Develop"></a>發展理念
 ### <a>背景故事</a>
 廷廷常常出去約會回來後，
@@ -19,11 +20,8 @@
 
 ### <a>功能介紹</a>
 模擬當有駭客想要透過SSH連線來連入被攻擊者的裝置進行操作時的情況，在嘗試多次輸入密碼未成功，以致於讓"被攻擊者"偵測到入侵後，"被攻擊者"會將駭客導向事先架設在自己本機的Docker中，並記錄下駭客在Docker中所執行的操作，再透過log檔的形式將蒐集到的資料傳送回"被攻擊者"主機，以達到實時監控的效果
-
 - 示意圖
 <img src="https://user-images.githubusercontent.com/55233942/149553359-c802bf41-3755-4792-9618-e6e944796709.png"/>
-
-
 
 ## <a id="device"></a>硬體、軟體設備、使用服務
 | 名稱 | 圖片 | 用途 |
@@ -34,7 +32,15 @@
 |Fail2ban|<img src="https://i.imgur.com/PELqrvA.png" width="150px"/>|偵測到密碼錯誤多次，對入侵 ip 進行操作|
 |rsyslog|<img src="https://i.imgur.com/14jszoJ.png" width="150px"/>|將記錄檔導出至被入侵之主機，即時更新目標行為|
 |iptables|<img src=https://i.imgur.com/8sp0L5A.png width="150px"/>|允許 TCP/UDP到本機的 514 port|
+
 ## <a id="LSA_class"></a>LSA課堂知識運用
+### SSH連線
+- [Week 06(2021/10/28) 基本指令/SSH](/CVfc0ILPTRycXBR_pG2NDA)
+- [Week 07(2021/11/04) SSH](/wl1BJaOIRQqavZ5rn0jMNQ)
+### iptables設定
+- [Week 11(2021/12/02) TCP/IP/iptables](/RXmaXIaiRjaPsn-fj9yECA)
+- [Week 12(2021/12/09) iptables](/KDeYZ5PcSDKmkrC2wiG5Bw)
+
 ## <a id="install"></a>安裝教學
 依照角色可以分為"被攻擊者"和"Docker"：
 
@@ -47,6 +53,7 @@
 - `sudo docker pull ubuntu`：
 - `sudo docker run -itd --name fakessh -p 5000:22 ubuntu`：
 - `sudo docker exec -it fakessh /bin/bash`：
+
 #### 建置fail2ban環境：
 - `sudo apt install fail2ban`：安裝fail2ban服務
 - `sudo vim /etc/fail2ban/jail.conf`：
@@ -104,10 +111,9 @@
     - `PermitRootLogin yes`：允許Root使用ssh登入
     ![image](https://user-images.githubusercontent.com/55233942/149631027-f1d9f25b-9ede-4d65-95f3-c95b1de6af5f.png)
 
-
-
 ## <a id="use"></a>使用教學
 - [實際操作影片](https://www.youtube.com/watch?v=1YplvXJDJvc&ab_channel=ChungTingXiao)
+
 ## <a id="work"></a>工作分配
 | 組員 | 工作內容 |
 | ------ | --------------- |
@@ -115,30 +121,37 @@
 | 朱珮瑜 | 找資料、編寫、Debug、Demo |
 | 張宥錚 | 找資料、Debug、共筆整理、PPT、口頭報告、GitHub |
 | 楊叡 | 找資料、編寫、Debug、共筆整理、PPT、GitHub |
+
 ## <a id="reference"></a>參考文獻
+
 ### fail2ban
+
 #### 環境建置
 - [fail2ban 教學](https://xenby.com/b/107-%E6%95%99%E5%AD%B8-%E4%BD%BF%E7%94%A8fail2ban%E9%98%B2%E6%AD%A2%E6%9A%B4%E5%8A%9B%E7%99%BB%E5%85%A5%E6%94%BB%E6%93%8A)
 - [SSH 5 分鐘內登入失敗 3 次](https://iter01.com/563209.html)
 - [fail2ban-基本設定及安裝筆記](https://crowsnest1217.com/%E5%AD%B8%E7%BF%92%E8%88%87%E5%88%86%E4%BA%AB/fail2ban-setting.html)
+
 #### 操作
 - [action](https://blog.xuite.net/bearsir/blog/61701441)
 - [手動解除 fail2ban 封鎖的 IP](https://www.ichiayi.com/tech/fail2ban_unban)
+
 ### rsyslog
 - [How to Configure Remote Logging with Rsyslog on Ubuntu 18.04](https://kifarunix.com/how-to-configure-remote-logging-with-rsyslog-on-ubuntu-18-04/)
 - [How to Send Linux Logs to a Remote Server](https://linuxhint.com/send_linux_logs_remote_server/)
 - [詳細解說的很棒的網址](https://www.tecmint.com/install-rsyslog-centralized-logging-in-centos-ubuntu/)
 - [Docker Syslog 日誌記錄和故障排除](https://www.loggly.com/use-cases/docker-syslog-logging-and-troubleshooting/)
 - [使用 Syslog 集中您的 Docker 日誌記錄](https://betterprogramming.pub/docker-centralized-logging-with-syslog-97b9c147bd30)
+
 ### Docker
+
 #### 環境建置
 - [Ubuntu Linux 安裝 Docker 步驟與使用教學](https://blog.gtwang.org/virtualization/ubuntu-linux-install-docker-tutorial/)
 - [Day 5 關於 Container 的那些大小事](https://ithelp.ithome.com.tw/articles/10193534)
 - [Docker Container 基礎入門篇 1](https://azole.medium.com/docker-container-%E5%9F%BA%E7%A4%8E%E5%85%A5%E9%96%80%E7%AF%87-1-3cb8876f2b14)
- #### 操作
+
+#### 操作
 - [進入docker跟映射ssh docker內設定](https://blog.csdn.net/qq_43914736/article/details/90608587)
 - [想用 SSH 連線到 Docker container](https://bingdoal.github.io/deploy/2021/02/use-ssh-connect-on-docker-container/)
 - [How to Fix SSH Failed Permission Denied](https://phoenixnap.com/kb/ssh-permission-denied-publickey)
 - [docker指令大全](https://joshhu.gitbooks.io/dockercommands/content/Containers/DockerRun.html)
 - [在Ubuntu容器中創建sudo用戶](https://blog.csdn.net/bryanwang_3099/article/details/109787215)
-
