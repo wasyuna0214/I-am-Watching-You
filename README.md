@@ -45,10 +45,10 @@
 依照角色可以分為"被攻擊者"和"Docker"：
 
 ### 被攻擊者
-
-#### 建置Docker：
+#### 更新
 - `sudo apt update`
 - `sudo apt upgrade`
+#### 建置Docker：
 - `sudo apt install docker.io`：安裝docker
 - `sudo docker pull ubuntu`：
 - `sudo docker run -itd --name fakessh -p 5000:22 ubuntu`：
