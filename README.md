@@ -83,14 +83,12 @@
 ![](https://i.imgur.com/DsGS6z4.png)
 - `sudo vim /etc/fail2ban/action.d/iptables-common.conf`
     - `actionflush = <iptables> -t nat -F f2b-<name>`
+    - `ssh imwatchingu@127.0.0.1` 先連線一次讓他產生 ssh 的 log
 - 重啟 fail2ban
     - `service fail2ban restart`
     - `fail2ban-client status`
 - 監看 ssh 有沒有抓到：`tail -f /var/log/imwatchingu-VirtualBox/sshd.log`
 - 監看 fail2ban 有沒有反映：`tail -f /var/log/fail2ban.log`
-
-- `ssh imwatchingu@127.0.0.1` 先連線一次讓他產生 ssh 的 log
-
 
 
 ### Docker
