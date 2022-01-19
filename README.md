@@ -159,3 +159,6 @@
 - [How to Fix SSH Failed Permission Denied](https://phoenixnap.com/kb/ssh-permission-denied-publickey)
 - [docker指令大全](https://joshhu.gitbooks.io/dockercommands/content/Containers/DockerRun.html)
 - [在Ubuntu容器中創建sudo用戶](https://blog.csdn.net/bryanwang_3099/article/details/109787215)
+
+### 共筆討論
+https://hackmd.io/@tjvxaJBrR96kvrKo_YYl-g/B1WQtpnct
