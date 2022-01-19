@@ -112,6 +112,7 @@
     - `PermitRootLogin yes`：允許Root使用ssh登入
     ![image](https://user-images.githubusercontent.com/55233942/149631027-f1d9f25b-9ede-4d65-95f3-c95b1de6af5f.png)
 - `sudo service ssh reload`：重啟ssh服務
+- 將本機`/etc/ssh/`路徑下的`ssh_host_ecdsa_key.pub`及`ssh_host_ecdsa_key`複製到Docker的同路徑下並取代原有檔案
 
 ## <a id="use"></a>使用教學
 - [實際操作影片](https://www.youtube.com/watch?v=1YplvXJDJvc&ab_channel=ChungTingXiao)
