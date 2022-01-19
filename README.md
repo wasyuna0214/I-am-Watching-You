@@ -54,27 +54,6 @@
 - `sudo docker run -itd --name fakessh -p 5000:22 ubuntu`：
 - `sudo docker exec -it fakessh /bin/bash`：
 
-#### 建置fail2ban環境：
-- `sudo apt install fail2ban`：安裝fail2ban服務
-- `sudo vim /etc/fail2ban/jail.conf`
-  - `maxretry=2`
-  - 在 sshd 下方加入：
-    - `enabled = true`
-    - `filter = sshd`
-    - `action = iptables[name=SSH, port=ssh, protocol=tcp]`
-    - `logpath = /var/log/imwatchingu-VirtualBox/sshd.log`
-   - 存檔
-- `sudo vim /etc/fail2ban/action.d/iptables.conf`
-![](https://i.imgur.com/DsGS6z4.png)
-- `sudo vim /etc/fail2ban/action.d/iptables-common.conf`
-    - `actionflush = <iptables> -t nat -F f2b-<name>`
-- `ssh imwatchingu@127.0.0.1` 先連線一次讓他產生 ssh 的 log
-- 重啟 fail2ban
-    - `service fail2ban restart`
-    - `fail2ban-client status`
-- 監看 ssh 有沒有抓到：`tail -f /var/log/imwatchingu-VirtualBox/sshd.log`
-- 監看 fail2ban 有沒有反映：`tail -f /var/log/fail2ban.log`
-
 #### 建置rsyslog
 - `sudo apt install rsyslog`
 - `service rsyslog start`
@@ -89,6 +68,30 @@
   - `sudo ss -tulnp | grep "rsyslog"`
   - `iptables -A INPUT -p tcp --dport 514 -j ACCEPT`
   - `iptables -A INPUT -p udp --dport 514 -j ACCEPT`
+
+#### 建置fail2ban環境：
+- `sudo apt install fail2ban`：安裝fail2ban服務
+- `sudo vim /etc/fail2ban/jail.conf`
+  - `maxretry=2`
+  - 在 sshd 下方加入：
+    - `enabled = true`
+    - `filter = sshd`
+    - `action = iptables[name=SSH, port=ssh, protocol=tcp]`
+    - `logpath = /var/log/imwatchingu-VirtualBox/sshd.log`
+   - 存檔
+- `sudo vim /etc/fail2ban/action.d/iptables.conf`
+![](https://i.imgur.com/DsGS6z4.png)
+- `sudo vim /etc/fail2ban/action.d/iptables-common.conf`
+    - `actionflush = <iptables> -t nat -F f2b-<name>`
+- 重啟 fail2ban
+    - `service fail2ban restart`
+    - `fail2ban-client status`
+- 監看 ssh 有沒有抓到：`tail -f /var/log/imwatchingu-VirtualBox/sshd.log`
+- 監看 fail2ban 有沒有反映：`tail -f /var/log/fail2ban.log`
+
+- `ssh imwatchingu@127.0.0.1` 先連線一次讓他產生 ssh 的 log
+
+
 
 ### Docker
 - `passwd`：新增密碼
