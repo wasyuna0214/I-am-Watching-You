@@ -52,7 +52,7 @@
 - `sudo apt install docker.io`：安裝docker
 - `sudo docker pull ubuntu`：
 - `sudo docker run -itd --name fakessh -p 5000:22 ubuntu`：
-- `sudo docker exec -it fakessh /bin/bash`：
+- `sudo docker exec -it fakessh /bin/bash`：進入Docker
 
 #### 建置rsyslog
 - `sudo apt install rsyslog`
