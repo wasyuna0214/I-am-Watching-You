@@ -45,7 +45,7 @@
 依照角色可以分為"被攻擊者"和"Docker"：
 
 ### 被攻擊者
-#### 更新
+#### 更新：
 - `sudo apt update`
 - `sudo apt upgrade`
 #### 建置Docker：
