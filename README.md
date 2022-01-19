@@ -83,7 +83,7 @@
 ![](https://i.imgur.com/DsGS6z4.png)
 - `sudo vim /etc/fail2ban/action.d/iptables-common.conf`
     - `actionflush = <iptables> -t nat -F f2b-<name>`
-    - `ssh imwatchingu@127.0.0.1` 先連線一次讓他產生 ssh 的 log
+- `ssh imwatchingu@127.0.0.1` 先連線一次讓他產生 ssh 的 log
 - 重啟 fail2ban
     - `service fail2ban restart`
     - `fail2ban-client status`
