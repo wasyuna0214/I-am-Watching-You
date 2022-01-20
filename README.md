@@ -80,7 +80,7 @@
     - `logpath = /var/log/imwatchingu-VirtualBox/sshd.log`
    - 存檔
 - `sudo vim /etc/fail2ban/action.d/iptables.conf`
-![](https://i.imgur.com/DsGS6z4.png)
+![image](https://user-images.githubusercontent.com/55233942/150308153-e93a538a-2088-4ca2-83c1-7793a8847f57.png)
 - `sudo vim /etc/fail2ban/action.d/iptables-common.conf`
     - `actionflush = <iptables> -t nat -F f2b-<name>`
 - `ssh imwatchingu@127.0.0.1` 先連線一次讓他產生 ssh 的 log
