@@ -52,9 +52,12 @@
 #### 更新：
 - `sudo apt update`
 - `sudo apt upgrade`
+- `sudo sysctl -w net.ipv4.ip_forward=1`
 #### 建置Docker：
 - `sudo apt install docker.io`：安裝docker
 - `sudo docker pull ubuntu`：
+- `sudo docker pull jrei/systemd-ubuntu:22.04`:拉取特製image
+- `sudo docker run -itd  --privileged=true --name fakessh -p 5000:22 -v /sys/fs/cgroup:/sys/fs/cgroup:ro jrei/systemd-ubuntu:22.04`:掛接讓服務能執行
 - `sudo docker run -itd --name fakessh -p 5000:22 ubuntu`：
 - `sudo docker exec -it fakessh /bin/bash`：進入Docker
 
